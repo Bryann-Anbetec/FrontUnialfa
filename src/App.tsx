@@ -1,26 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import UsersForm from "./users/usersForm";
+import UsersList from "./users/usersList";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <nav>
+        <div className="navbar-container">
+          <span className="brand">
+            <span role="img" aria-label="ferramenta">
+              🔧
+            </span>{" "}
+            Ferragista do Bairro
+          </span>
+          <ul>
+            <li>
+              <Link to="/">Início</Link>
+            </li>
+            <li>
+              <Link to="/usuarios">Usuários</Link>
+            </li>
+            <li>
+              <Link to="/cadastrar">Cadastrar</Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div className="main-content">
+        <Routes>
+          <Route path="/cadastrar" element={<UsersForm />} />
+          <Route path="/usuarios" element={<UsersList />} />
+          <Route
+            path="/"
+            element={
+              <div className="card welcome">
+                <h2>Bem-vindo à Ferragista do Bairro!</h2>
+                <p>
+                  Seu sistema de cadastro de usuários com visual moderno e
+                  seguro.
+                  <br />
+                  Use o menu acima para navegar.
+                </p>
+              </div>
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
