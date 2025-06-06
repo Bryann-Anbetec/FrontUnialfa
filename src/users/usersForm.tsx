@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import api from "../api";
+import { motion } from "framer-motion";
 
 interface Users {
   nome: string;
@@ -26,7 +27,12 @@ const UsersForm: React.FC = () => {
   };
 
   return (
-    <div className="card">
+    <motion.div
+      className="card"
+      initial={{ opacity: 0, scale: 0.95, y: 40 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 0.6, type: "spring" }}
+    >
       <h2>Cadastrar Usuário</h2>
       <form onSubmit={handleSubmit}>
         <label>Nome</label>
@@ -48,7 +54,7 @@ const UsersForm: React.FC = () => {
         />
         <button type="submit">Cadastrar</button>
       </form>
-    </div>
+    </motion.div>
   );
 };
 

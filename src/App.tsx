@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import UsersForm from "./users/usersForm";
 import UsersList from "./users/usersList";
+import "./assets/ChatGPT Image 6 de jun. de 2025, 11_47_12.png";
 
 const App: React.FC = () => {
   return (
@@ -35,7 +36,17 @@ const App: React.FC = () => {
             path="/"
             element={
               <div className="card welcome">
-                <h2>Bem-vindo à Ferragista do Bairro!</h2>
+                <div className="banner">
+                  <img
+                    src={require("./assets/ChatGPT Image 6 de jun. de 2025, 11_47_12.png")}
+                    alt="Ferramentas"
+                    className="banner-img"
+                  />
+                  <div className="banner-text">
+                    <h2>Bem-vindo à Ferragista do Bairro!</h2>
+                    <p>Tradição, confiança e tudo para sua obra ou reforma.</p>
+                  </div>
+                </div>
                 <p>
                   Seu sistema de cadastro de usuários com visual moderno e
                   seguro.
@@ -47,6 +58,12 @@ const App: React.FC = () => {
           />
         </Routes>
       </div>
+      <footer className="footer">
+        <p>
+          Ferragista do Bairro © 2025 | Rua das Ferramentas, 123 | (62)
+          98274-9331
+        </p>
+      </footer>
     </Router>
   );
 };

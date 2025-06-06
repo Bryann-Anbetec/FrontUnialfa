@@ -193,3 +193,46 @@ h2 {
   background: var(--primary-blue);
   border-radius: 8px;
 }
+
+.banner {
+  display: flex;
+  flex-direction: column; /* <-- Deixa imagem em cima */
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary-bg);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  margin: 2rem auto 2rem auto;
+  max-width: 900px;
+  overflow: hidden;
+  animation: fadeInUp 1s;
+}
+.banner-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.banner-text {
+  padding: 1rem 2rem 2rem 2rem;
+  text-align: center;
+}
+.banner-text h2 {
+  color: var(--accent-blue);
+  margin-bottom: 0.5rem;
+}
+.banner-text p {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
+
+.footer {
+  background: var(--secondary-bg);
+  color: var(--text-muted);
+  text-align: center;
+  padding: 1.5rem 0 1rem 0;
+  margin-top: 3rem;
+  font-size: 1rem;
+  border-top: 1px solid var(--border);
+}
